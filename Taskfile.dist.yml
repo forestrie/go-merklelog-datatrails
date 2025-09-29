@@ -1,0 +1,45 @@
+---
+version: "3"
+
+includes:
+  gotest:
+    taskfile: ../taskfiles/gotest.yml
+    # optional because the ../taskfiles dir is cloned via bootstrap below
+    optional: true
+    dir: .
+
+tasks:
+
+  bootstrap:
+    desc: bootstrap the development environment
+    cmds:
+      - |
+        GIT_BOOTSTRAP_SH=$(curl -fsSL https://raw.githubusercontent.com/robinbryce/git-bootstrap/refs/heads/main/git-bootstrap.v2.sh)
+        sh -c "$GIT_BOOTSTRAP_SH" - clone .
+        sh -c "$GIT_BOOTSTRAP_SH" - checkout .
+
+        if [ -f ../go.work ]; then
+          echo "go.work exists, you may need to update it"
+        else
+        cat <<EOF > ../go.work
+        go 1.24.4
+        use (
+        	./go-datatrails-common
+        	./go-datatrails-simplehash
+        	./go-datatrails-serialization
+        	./go-merklelog-datatrails
+        )
+        EOF
+        fi
+        exit 0
+
+
+  test:
+    desc: run all the tests
+    cmds:
+      - task: test:unit
+
+  test:unit:
+    desc: run the unit tests
+    cmds:
+      - task: gotest:unit
