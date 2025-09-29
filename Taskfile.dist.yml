@@ -9,7 +9,6 @@ includes:
     dir: .
 
 tasks:
-
   bootstrap:
     desc: bootstrap the development environment
     cmds:
@@ -26,13 +25,12 @@ tasks:
         use (
         	./go-datatrails-common
         	./go-datatrails-simplehash
-        	./go-datatrails-serialization
+        	./go-datatrails-serialization/eventsv1
         	./go-merklelog-datatrails
         )
         EOF
         fi
         exit 0
-
 
   test:
     desc: run all the tests
@@ -43,3 +41,4 @@ tasks:
     desc: run the unit tests
     cmds:
       - task: gotest:unit
+
