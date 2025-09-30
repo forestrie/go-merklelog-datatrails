@@ -1,4 +1,4 @@
-module github.com/robinbryce/go-merklelog-datatrails
+module github.com/forestrie/go-merklelog-datatrails
 
 go 1.24
 

@@ -3,7 +3,7 @@ package v3hash
 import (
 	"errors"
 
-	"github.com/robinbryce/go-merklelog-datatrails/appentry"
+	"github.com/forestrie/go-merklelog-datatrails/appentry"
 )
 
 // Note: We need this logic to detect incomplete JSON unmarshalled into these types. This should

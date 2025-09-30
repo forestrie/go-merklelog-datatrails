@@ -42,6 +42,8 @@ const (
 	ExtraBytesSize = 24
 
 	IDTimestapSizeBytes = 8
+	AssetsV2AppDomain   = byte(0)
+	EventsV1AppDomain   = byte(1)
 )
 
 // MMREntryFields are the fields that when hashed result in the MMR Entry
