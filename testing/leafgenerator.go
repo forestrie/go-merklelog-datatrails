@@ -11,9 +11,9 @@ import (
 
 	"github.com/datatrails/go-datatrails-common-api-gen/assets/v2/assets"
 	"github.com/datatrails/go-datatrails-common-api-gen/attribute/v2/attribute"
-	"github.com/datatrails/go-datatrails-merklelog/massifs/storage"
 	"github.com/datatrails/go-datatrails-simplehash/simplehash"
 	"github.com/forestrie/go-merklelog-datatrails/datatrails"
+	"github.com/forestrie/go-merklelog/massifs/storage"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/types/known/timestamppb"

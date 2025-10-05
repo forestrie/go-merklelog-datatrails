@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/datatrails/go-datatrails-merklelog/massifs/storage"
+	"github.com/forestrie/go-merklelog/massifs/storage"
 )
 
 var ErrMassifPathFmt = errors.New("invalid massif path")

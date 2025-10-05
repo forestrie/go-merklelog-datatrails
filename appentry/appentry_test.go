@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 	"testing"
 
-	"github.com/datatrails/go-datatrails-merklelog/massifs"
 	"github.com/datatrails/go-datatrails-serialization/eventsv1"
+	"github.com/forestrie/go-merklelog/massifs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

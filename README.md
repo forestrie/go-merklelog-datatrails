@@ -38,5 +38,5 @@ This module depends on:
 - github.com/datatrails/go-datatrails-common  
 - github.com/datatrails/go-datatrails-simplehash
 - github.com/datatrails/go-datatrails-serialization/eventsv1
-- github.com/datatrails/go-datatrails-merklelog/massifs
-- github.com/datatrails/go-datatrails-merklelog/mmr
+- github.com/forestrie/go-merklelog/massifs
+- github.com/forestrie/go-merklelog/mmr

@@ -1,8 +1,8 @@
 package appentry
 
 import (
-	"github.com/datatrails/go-datatrails-merklelog/massifs"
 	"github.com/datatrails/go-datatrails-simplehash/simplehash"
+	"github.com/forestrie/go-merklelog/massifs"
 )
 
 /**
