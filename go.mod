@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	github.com/datatrails/go-datatrails-common-api-gen v0.8.0
 	github.com/datatrails/go-datatrails-serialization/eventsv1 v0.0.0-20240909144155-35c44c77e223
-	github.com/datatrails/go-datatrails-simplehash v0.0.0-20241001114049-90fd7a82596f
+	github.com/datatrails/go-datatrails-simplehash v0.2.0
 	github.com/forestrie/go-merklelog/massifs v0.0.2
 	github.com/forestrie/go-merklelog/mmr v0.0.2
 	github.com/google/uuid v1.6.0
