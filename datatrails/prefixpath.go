@@ -36,7 +36,7 @@ func StorageObjectPrefix(logID storage.LogID, otype storage.ObjectType) (string,
 func StorageObjectPrefixWithHeight(logID storage.LogID, massifHeight uint8, otype storage.ObjectType) (string, error) {
 	// Convert LogID to UUID string (without "tenant/" prefix for base format)
 	uuidStr := uuid.UUID(logID).String()
-	
+
 	switch otype {
 	case storage.ObjectMassifStart, storage.ObjectMassifData, storage.ObjectPathMassifs:
 		// Base format: {massifHeight}/{uuid}/
