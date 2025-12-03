@@ -30,7 +30,7 @@ func StorageLogID(storagePath string) (storage.LogID, error) {
 // Supports both v1 (v1/mmrs/tenant/...) and v2 (v2/merklelog/massifs/...) formats
 func IsMassifPathLike(path string) bool {
 	// Check v2 format: v2/merklelog/massifs/...
-	if strings.HasPrefix(path, V2MerklelogMassifsPrefix+"/") {
+	if strings.HasPrefix(path, storage.V2MerklelogMassifsPrefix+"/") {
 		return strings.HasSuffix(path, storage.V1MMRMassifExt)
 	}
 	// Check v1 format: v1/mmrs/tenant/...
@@ -44,7 +44,7 @@ func IsMassifPathLike(path string) bool {
 // Supports both v1 (v1/mmrs/tenant/.../massifseals/...) and v2 (v2/merklelog/checkpoints/...) formats
 func IsSealPathLike(path string) bool {
 	// Check v2 format: v2/merklelog/checkpoints/...
-	if strings.HasPrefix(path, V2MerklelogCheckpointsPrefix+"/") {
+	if strings.HasPrefix(path, storage.V2MerklelogCheckpointsPrefix+"/") {
 		return strings.HasSuffix(path, storage.V1MMRSealSignedRootExt)
 	}
 	// Check v1 format: v1/mmrs/tenant/.../massifseals/...
@@ -59,7 +59,7 @@ func IsSealPathLike(path string) bool {
 // Supports both v1 and v2 path formats
 func ParseMassifPathTenant(path string) (string, error) {
 	parts := strings.Split(path, storage.V1MMRPathSep)
-	
+
 	// v2 format: v2/merklelog/massifs/{massifHeight}/{uuid}/{index}.log
 	// or v2/merklelog/checkpoints/{massifHeight}/{uuid}/{index}.sth
 	if len(parts) >= 5 && parts[0] == "v2" && parts[1] == "merklelog" {
@@ -138,7 +138,7 @@ func ParseMassifPathNumberExt(path string) (uint32, string, error) {
 // Supports both v1 (returns 0 or reads from path) and v2 (extracts from path) formats.
 func ParseMassifPathHeight(path string) (uint8, error) {
 	parts := strings.Split(path, storage.V1MMRPathSep)
-	
+
 	// v2 format: v2/merklelog/massifs/{massifHeight}/{uuid}/{index}.log
 	// or v2/merklelog/checkpoints/{massifHeight}/{uuid}/{index}.sth
 	if len(parts) >= 5 && parts[0] == "v2" && parts[1] == "merklelog" {

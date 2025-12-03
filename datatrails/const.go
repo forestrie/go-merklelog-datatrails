@@ -9,8 +9,4 @@ const (
 	// Note: this is due to datatrails tenant schema
 	V1MMRTenantPrefix = "v1/mmrs/tenant"
 	LogInstanceN      = 0 // the log instance number, used to identify the log in the massif path
-
-	// V2 path prefixes for Arbor/Canopy services
-	V2MerklelogMassifsPrefix     = "v2/merklelog/massifs"
-	V2MerklelogCheckpointsPrefix = "v2/merklelog/checkpoints"
 )
